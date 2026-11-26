@@ -1,0 +1,89 @@
+:root {
+  color-scheme: light;
+  --ink: #142d32;
+  --muted: #4f6362;
+  --accent: #086a63;
+  --paper: #fcfbf7;
+  --line: #cdd5cc;
+  font-family: "Atkinson Hyperlegible Next", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+button, select, textarea, input { font: inherit; }
+button, select { cursor: pointer; }
+button:disabled { cursor: default; }
+button { border-radius: .5rem; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible,
+a:focus-visible, h1:focus-visible { outline: 3px solid #a74b19; outline-offset: 3px; }
+.skip { position: absolute; left: 1rem; top: -8rem; z-index: 2; background: white; color: var(--ink); padding: .8rem; }
+.skip:focus { top: .5rem; }
+.mast { background: var(--ink); color: #fff; }
+.mast-inner, .layout { max-width: 79rem; margin: 0 auto; padding-inline: clamp(1rem, 4vw, 3.5rem); }
+.mast-inner { min-height: 4.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand, .brand-icon { display: inline-flex; align-items: center; }
+.brand { gap: .7rem; font-weight: 700; font-size: 1.15rem; letter-spacing: -.045em; }
+.brand-icon { width: 1.8rem; height: 1.75rem; flex-direction: column; align-items: flex-start; justify-content: center; gap: .19rem; }
+.brand-icon i { width: 1.3rem; height: .5rem; background: #a8dabb; border-radius: .2rem .2rem .2rem 0; }
+.brand-icon i:last-child { align-self: flex-end; background: #ffb081; }
+#export { padding: .48rem .9rem; background: transparent; color: white; border: 1px solid #99b4ac; font-size: .93rem; }
+#export:disabled { color: #c3cecb; border-color: #6b8483; }
+#export:enabled:hover { background: #25474b; }
+.layout { display: grid; grid-template-columns: minmax(12rem, 15.2rem) minmax(0, 1fr); gap: clamp(2rem, 5.6vw, 5rem); padding-block: clamp(2rem, 6vw, 4.5rem); }
+aside { border-right: 1px solid var(--line); padding-right: clamp(1rem, 2.7vw, 2rem); }
+.queue-heading { font-size: 1.12rem; margin: 0; }
+.progress-label { color: var(--muted); font-size: .9rem; margin: .3rem 0 .5rem; }
+progress { display: block; appearance: none; width: 100%; height: .32rem; overflow: hidden; border: 0; background: #dae1d9; border-radius: 1rem; color: var(--accent); accent-color: var(--accent); }
+progress::-webkit-progress-bar { background: #dae1d9; }
+progress::-webkit-progress-value { background: var(--accent); }
+progress::-moz-progress-bar { background: var(--accent); }
+#queue { display: grid; gap: .46rem; margin: 1.7rem 0; }
+#queue button { display: flex; align-items: center; gap: .65rem; border: 1px solid transparent; padding: .65rem .55rem; color: var(--ink); background: transparent; line-height: 1.3; text-align: left; font-size: .95rem; }
+#queue button:hover { background: #edf1e9; }
+#queue button[aria-current] { background: #e4f0e6; border-color: #a5c6b1; font-weight: 650; }
+.marker { flex: none; display: inline-grid; place-items: center; width: 1.05rem; height: 1.05rem; border: 1px solid #869c92; border-radius: 50%; font-size: .75rem; }
+.marker.done { background: var(--accent); border-color: var(--accent); color: white; }
+.queue-note { font-size: .9rem; color: var(--muted); max-width: 26ch; }
+.category { margin: 0 0 .4rem; color: var(--accent); font-size: .88rem; font-weight: 700; }
+h1 { margin: 0; font: 500 clamp(2.6rem, 5vw, 4.5rem)/1.04 "Iowan Old Style", "Palatino Linotype", Georgia, serif; letter-spacing: -.056em; overflow-wrap: anywhere; }
+.brief { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.2rem; border-block: 1px solid var(--line); margin: 1.85rem 0; padding: 1.25rem 0; }
+.brief h2 { margin: 0 0 .45rem; font-size: .86rem; font-weight: 700; color: var(--muted); }
+.brief p, blockquote { margin: 0; }
+.message { padding: .75rem 0; }
+blockquote { font: 500 1.28rem/1.45 "Iowan Old Style", "Palatino Linotype", Georgia, serif; }
+.policy { padding: .75rem 1rem; border-left: 3px solid #d59767; background: #f7f0e6; }
+.policy p { font-size: .96rem; }
+fieldset { margin: 0; padding: 0; border: none; min-width: 0; }
+legend { padding: 0; margin-bottom: .9rem; font-size: 1.2rem; font-weight: 700; letter-spacing: -.035em; }
+.replies { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; }
+.reply { display: flex; flex-direction: column; gap: .6rem; padding: 1.15rem; border: 1px solid #a8b9b1; border-radius: .65rem; cursor: pointer; background: white; }
+.reply:hover { border-color: var(--accent); }
+.reply:has(:checked) { background: #edf6ef; border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.reply-head { display: flex; align-items: center; gap: .55rem; font-weight: 700; }
+input[type="radio"] { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: var(--accent); }
+.reason-row { display: grid; grid-template-columns: 1fr 1.35fr; gap: 1.15rem; margin: 1.35rem 0; }
+.reason-row label { font-weight: 650; font-size: .93rem; }
+.optional { color: var(--muted); font-weight: normal; }
+select, textarea { display: block; width: 100%; border: 1px solid #a8b9b1; background: white; color: var(--ink); padding: .55rem; border-radius: .45rem; margin-top: .35rem; font-size: 1rem; font-weight: 400; }
+textarea { min-height: 3rem; resize: vertical; }
+.review-footer { border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1rem; }
+#status { font-size: .9rem; color: var(--muted); margin: 0; }
+#next { background: var(--ink); border: 1px solid var(--ink); color: white; padding: .55rem 1rem; flex-shrink: 0; }
+#next:hover { background: var(--accent); }
+@media (max-width: 53rem) {
+  .layout { grid-template-columns: 1fr; gap: 2rem; padding-block: 1.5rem 2.5rem; }
+  aside { border: none; padding: 0 0 1.3rem; border-bottom: 1px solid var(--line); }
+  #queue { display: flex; flex-wrap: wrap; gap: .35rem; margin: .8rem 0 0; }
+  #queue button { font-size: .88rem; padding: .45rem .55rem; border-color: var(--line); }
+  .queue-note { max-width: none; margin: .65rem 0 0; }
+}
+@media (max-width: 40rem) {
+  .mast-inner { min-height: 4rem; }
+  .brief, .replies, .reason-row { grid-template-columns: 1fr; }
+  .brief { gap: .5rem; margin: 1.25rem 0; padding: .8rem 0; }
+  .reason-row { gap: .85rem; }
+  .reply { padding: .9rem; }
+}
