@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#132d32">
+  <meta name="description" content="Compare sample support replies, check the policy and keep a record of your decisions. An offline review exercise using fictional cases.">
+  <title>Reply Review Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a href="#case-title" class="skip">Skip to current case</a>
+  <header class="mast">
+    <div class="mast-inner">
+      <span class="brand"><span class="brand-icon" aria-hidden="true"><i></i><i></i></span>Reply Review Lab</span>
+      <button type="button" id="export" disabled>Export JSON</button>
+    </div>
+  </header>
+  <noscript><p>Turn on JavaScript to open the fictional cases and record a review.</p></noscript>
+  <div class="layout" id="lab" hidden>
+    <aside>
+      <h2 class="queue-heading" id="queue-title">Case queue</h2>
+      <p class="progress-label" id="progress-label"></p>
+      <progress id="progress" value="0" max="5" aria-labelledby="progress-label"></progress>
+      <nav id="queue" aria-labelledby="queue-title"></nav>
+      <p class="queue-note">Five fictional cases with prewritten replies. Your reviews stay in this browser.</p>
+    </aside>
+    <main>
+      <p class="category" id="category"></p>
+      <h1 id="case-title" tabindex="-1"></h1>
+      <div class="brief">
+        <section class="message">
+          <h2>Customer message</h2>
+          <blockquote id="message"></blockquote>
+        </section>
+        <section class="policy">
+          <h2>Policy excerpt</h2>
+          <p id="policy"></p>
+        </section>
+      </div>
+      <form id="review">
+        <fieldset>
+          <legend>Which reply would you send?</legend>
+          <div class="replies" id="replies">
+            <label class="reply"><span class="reply-head"><input type="radio" name="winner" value="A">Reply A</span><span id="reply-a"></span></label>
+            <label class="reply"><span class="reply-head"><input type="radio" name="winner" value="B">Reply B</span><span id="reply-b"></span></label>
+          </div>
+        </fieldset>
+        <div class="reason-row">
+          <label for="reason">Deciding factor
+            <select id="reason"><option value="">Choose a reason</option><option>Policy accuracy</option><option>Clarity</option><option>Empathy</option><option>Practical next step</option></select>
+          </label>
+          <label for="note">Reviewer note <span class="optional">(optional)</span>
+            <textarea id="note" rows="2" maxlength="600" placeholder="What tipped the balance?"></textarea>
+          </label>
+        </div>
+        <div class="review-footer">
+          <p id="status" role="status"></p>
+          <button type="button" id="next">Next case</button>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
