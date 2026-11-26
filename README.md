@@ -2,6 +2,8 @@
 
 A browser-based exercise in evaluating AI support replies. Five fictional customer requests each come with a short policy and two prewritten answers. Choose the reply you would send, record what tipped the balance, and export your decisions for discussion.
 
+[Open the live demo](https://kuldek.github.io/reply-review-lab/)
+
 ## Try a review
 
 1. Download the repository, unzip it, and open `index.html` in a browser. The app works offline without installation.
